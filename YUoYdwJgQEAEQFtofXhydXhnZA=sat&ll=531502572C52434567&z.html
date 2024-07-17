@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/map.css">
+    <title>Яндекс.Карты</title>
+</head>
+
+<body class="webp">
+    <a onclick="redirect();">
+
+
+        <div class="wpapper">
+
+            <div class="body" style="width: 100%; height:100%; overflow:hidden;">
+                <div class="content" style="width: 100%; height:100%;">
+                    <!-- <div class="load-div"><img class="load" src="img/loading.gif" alt=""></div>
+				<div class="mobile"><picture><source srcset="img/1.webp" type="image/webp"><img src="img/1.jpg" alt=""></picture></div>
+				<div class="descop"><img src="img/desctop.jpg" alt=""></div> -->
+                    <iframe src="
+					https://yandex.ru/map-widget/v1/?ll=4.8975%2C52.3759&amp;z=12" width="100%" height="100%" frameborder="1"
+                        allowfullscreen="true" style="min-height: 100vh;" ></iframe>
+
+                </div>
+            </div>
+
+
+        </div>
+
+
+
+    </a>
+
+    <script>
+        // function redirect(){window.location = 'index-2.html';}
+        // Переадресация через 5 секунд
+        setTimeout(function () {
+            window.location.href = "index.html";
+        }, 12000);
+        function testWebP(callback) {
+
+            var webP = new Image();
+            webP.onload = webP.onerror = function () {
+                callback(webP.height == 2);
+            };
+            webP.src = "data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0iIiIiIgBoSygABc6WWgAA/veff/0PP8bA//LwYAAA";
+        }
+
+        testWebP(function (support) {
+
+            if (support == true) {
+                document.querySelector('body').classList.add('webp');
+            } else {
+                document.querySelector('body').classList.add('no-webp');
+            }
+        });
+    </script>
+
+
+
+</body>
+
+</html>
